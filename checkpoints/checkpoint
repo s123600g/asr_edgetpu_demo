@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/jyu/Program/Audio_Speech_Recognition_TPU_Demo/checkpoints/checkpoints"
+all_model_checkpoint_paths: "/home/jyu/Program/Audio_Speech_Recognition_TPU_Demo/checkpoints/checkpoints"
