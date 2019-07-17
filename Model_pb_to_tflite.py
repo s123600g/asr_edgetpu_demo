@@ -42,6 +42,8 @@ import argparse
 import tensorflow as tf
 import os
 import time
+import numpy as np
+import sqlite3
 
 ''' 設置CLI執行程式時，參數項目配置 '''
 parser = argparse.ArgumentParser()
@@ -58,6 +60,11 @@ args = parser.parse_args()
 
 input_model_path = ""  # 放置來源模型位置
 output_model_path = ""  # 放置輸出模型位置
+valid_data_path = os.path.join(
+    os.getcwd(),
+    "tflite_model",
+    "validdata",
+)
 
 
 def gen_Path_DetailInfo():
@@ -94,8 +101,6 @@ def gen_Path_DetailInfo():
 
 
 if __name__ == "__main__":
-
-    # try:
 
     Start_Time = time.time()
 
@@ -199,24 +204,116 @@ if __name__ == "__main__":
         input_details[0],
     ))
 
-    print("[Model_to_TFLite] '{}' --> output_details\n{}".format(
+    print("[Model_to_TFLite] '{}' --> output_details\n{}\n".format(
         str(output_model_path).split('/')[-1],
         output_details[0],
     ))
 
-    # output_data = interpreter.get_tensor(output_details[0]['index'])
-    # print(output_data)
+    ''' 取得驗證資料集 '''
+    valid_data_name = ""
+    valid_data = list()
+
+    for read_dir in os.listdir(valid_data_path):
+
+        # print("[Model_to_TFLite] Valid Directory：{}".format(read_dir))
+
+        if os.path.isdir(os.path.join(valid_data_path, read_dir)):
+
+            valid_data_name = read_dir
+
+            print("[Model_to_TFLite] Valid Name：{}".format(valid_data_name))
+
+            for read_file in os.listdir(os.path.join(valid_data_path, read_dir)):
+
+                print("[Model_to_TFLite] Valid File：{}".format(read_file))
+
+                with open(os.path.join(valid_data_path, read_dir, read_file), "r") as read:
+                    temp_read_content = read.readlines()
+
+                for read_row in temp_read_content:
+
+                    # 將每一行先做去除尾巴換行符號，並進行資料切割
+                    read_row = str(read_row).rstrip(" \n").split(" ")
+
+                    temp_list = list()
+
+                    # 讀取已完成去除尾巴換行符號與進行資料切割之每列內之欄位資料
+                    for feature in read_row:
+
+                        # 存放每一列的欄位資料
+                        valid_data.append(float(feature))
+
+    valid_data = np.array(valid_data).astype('float32')
+    # print("[Model_to_TFLite] Valid data：{}".format(valid_data))
+
+    ''' 取得標準值與平均值 '''
+    std, mean = input_details[0]['quantization']
+    print("[Model_to_TFLite] std：{} , mean：{}".format(std, mean))
+
+    ''' 將valid_data進行量化 '''
+    quantize_valid_data = (valid_data / std + mean).astype('uint8')
+    # print("[Model_to_TFLite] quantize_data：{}".format(
+    #     (valid_data / std + mean)))
+    # print("[Model_to_TFLite] quantize_valid_data：{}".format(quantize_valid_data))
+
+    ''' 將valid_data進行reshape，跟input_details[0]['shape']一樣格式 '''
+    sample_input_data = quantize_valid_data.reshape(input_details[0]['shape'])
+    print("[Model_to_TFLite] sample_input_data shape：{}".format(
+        sample_input_data.shape))
+
+    ''' 設定輸入層張量Data '''
+    interpreter.set_tensor(input_details[0]['index'], sample_input_data)
+
+    ''' 進行模型調用 '''
+    interpreter.invoke()
+
+    predict_quantized_result = interpreter.get_tensor(
+        output_details[0]['index']
+    )
+
+    print("[Model_to_TFLite] predict_quantized_result shape：{}".format(
+        predict_quantized_result[0].shape
+    ))
+
+    print("[Model_to_TFLite] {} ".format(
+        predict_quantized_result[0]
+    ))
+
+    get_prediction_index = np.argmax(predict_quantized_result[0])
+
+    print("[Model_to_TFLite] get_prediction_index：{} ".format(
+        get_prediction_index
+    ))
+
+    dbconn = sqlite3.connect(
+        os.path.join(
+            os.getcwd(),
+            Config.SQLite_DB_DirectoryName,
+            Config.SQLite_name
+        )
+    )
+
+    curs = dbconn.cursor()
+
+    ''' 查詢預測出來分類編號對應分類名稱 '''
+    SQL_select_syntax = '''
+    SELECT {} FROM {} WHERE {} = '{}'
+    '''.format(
+        Config.column_Classname,  # 欄位名稱-ClassName
+        Config.db_TableName,  # 查詢資料表
+        Config.column_ClassNum,  # 欄位名稱-ClassNum
+        get_prediction_index  # 預測分類編號結果
+    )
+
+    SQL_run = curs.execute(SQL_select_syntax)
+    SQL_result = curs.fetchall()
+
+    print("[Model_to_TFLite] predict_quantized_result：{}".format(
+        SQL_result[0][0],
+    ))
 
     print("\nSpeed time: {:.2f}s\n".format((time.time() - Start_Time)))
 
     print("可在終端機使用下列命令，來進行EdgeTPU Compiler TFLite model\n>> edgetpu_compiler -s {} <<\n".format(
         output_model_path
     ))
-
-    # except FileNotFoundError as err:
-
-    #     print("\n>>> {} <<<".format(err))
-
-    # except Exception as err:
-
-    #     print("\n>>> {} <<<".format(err))

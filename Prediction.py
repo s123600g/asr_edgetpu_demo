@@ -194,7 +194,12 @@ if __name__ == "__main__":
                             batch_size=batch_size
                         )
 
+                        # print("predict_result：{}".format(predict_result[0]))
+
                         get_prediction_index = np.argmax(predict_result[0])
+
+                        # print("get_prediction_index：{}".format(
+                        #     get_prediction_index))
 
                         # print("{:.2f}%".format(
                         #     (predict_result[0][get_prediction_index] * 100)))

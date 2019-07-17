@@ -45,7 +45,7 @@ import history_plot
 '''模型訓練參數配置-CNN'''
 batch_size = 100
 epochs = 20
-quant_delay = 5
+quant_delay = 10
 verbose = 1
 # CNN_optimizer = 'Adadelta'
 CNN_optimizer = keras.optimizers.Adadelta(lr=0.5)
@@ -85,7 +85,8 @@ callbacks = [
     ),
     tf.keras.callbacks.ModelCheckpoint(filepath=os.path.join(Config.Model_ModelCheckpoint_Path, "ckpt_{epoch:02d}"),
                                        verbose=1,
-                                       save_weights_only=False),
+                                       save_weights_only=False
+                                       ),
 
 ]
 
@@ -123,6 +124,7 @@ def build_model():
         )
     )
 
+    # 激活函數
     model.add(
 
         Activation(CNN_inputlayer_Activation)
@@ -134,18 +136,15 @@ def build_model():
             CNN_onelayer_conv2D_hidden_unit,
             kernel_size=CNN_onelayer_conv2D_kernel_size,
             padding=CNN_onelayer_conv2D_padding,
-            # activation=CNN_onelayer_Activation
         )
     )
-
-    # model.add(BatchNormalization(fused=True))
 
     model.add(
 
         Activation(CNN_onelayer_Activation)
     )
 
-    # model.add(BatchNormalization(fused=True))
+    # 批量標準化層
     model.add(BatchNormalization(fused=False))
 
     # 池化層
@@ -161,18 +160,16 @@ def build_model():
             CNN_twolayer_conv2D_hidden_unit,
             kernel_size=CNN_twolayer_conv2D_kernel_size,
             padding=CNN_twolayer_conv2D_padding,
-            # activation=CNN_twolayer_Activation
         )
     )
 
-    # model.add(BatchNormalization(fused=True))
-
+    # 激活函數
     model.add(
 
         Activation(CNN_twolayer_Activation)
     )
 
-    # model.add(BatchNormalization(fused=True))
+    # 批量標準化層
     model.add(BatchNormalization(fused=False))
 
     # 池化層
@@ -192,10 +189,10 @@ def build_model():
     model.add(
         Dense(
             CNN_full_connectionlayer_Dense,
-            # activation=CNN_full_connectionlayer_Activation
         )
     )
 
+    # 激活函數
     model.add(
 
         Activation(CNN_full_connectionlayer_Activation)
@@ -440,7 +437,6 @@ if __name__ == "__main__":
     # ''' 輸出轉換後tflite格式模型 '''
     # with open(Config.Output_Model_Path, "wb") as f:
     #     f.write(tflite_model)
-
 
     end_time = '{:.2f}'.format((time.time() - Start_Time))
 
