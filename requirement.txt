@@ -1,0 +1,7 @@
+tf-nightly==1.15.0
+keras==2.2.4
+numpy==1.16.4
+matplotlib==3.1.0
+librosa==0.6.3
+sklearn
+tensorboard==1.10.0
