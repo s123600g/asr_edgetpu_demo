@@ -1,0 +1,1053 @@
+Edge TPU Compiler version 1.0.249710469
+
+Models compiled successfully in 3809 ms.
+
+Input model: ASR_Model10.tflite
+Input size: 102.77KiB
+Output model: ASR_Model10_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 7.96MiB
+On-chip memory used for caching model parameters: 106.50KiB
+Off-chip memory used for streaming uncached model parameters: 3.00KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model10_edgetpu.log
+
+Operator                       Count      Status
+
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+
+Input model: ASR_Model11.tflite
+Input size: 102.77KiB
+Output model: ASR_Model11_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 7.85MiB
+On-chip memory used for caching model parameters: 106.50KiB
+Off-chip memory used for streaming uncached model parameters: 3.00KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model11_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+
+Input model: ASR_Model12.tflite
+Input size: 102.77KiB
+Output model: ASR_Model12_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 7.75MiB
+On-chip memory used for caching model parameters: 106.50KiB
+Off-chip memory used for streaming uncached model parameters: 3.00KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model12_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+
+Input model: ASR_Model13.tflite
+Input size: 102.77KiB
+Output model: ASR_Model13_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 7.65MiB
+On-chip memory used for caching model parameters: 106.50KiB
+Off-chip memory used for streaming uncached model parameters: 3.00KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model13_edgetpu.log
+
+Operator                       Count      Status
+
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model14.tflite
+Input size: 102.77KiB
+Output model: ASR_Model14_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 7.54MiB
+On-chip memory used for caching model parameters: 106.50KiB
+Off-chip memory used for streaming uncached model parameters: 3.00KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model14_edgetpu.log
+
+Operator                       Count      Status
+
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+
+Input model: ASR_Model15.tflite
+Input size: 102.77KiB
+Output model: ASR_Model15_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 7.44MiB
+On-chip memory used for caching model parameters: 106.50KiB
+Off-chip memory used for streaming uncached model parameters: 3.00KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model15_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+
+Input model: ASR_Model16.tflite
+Input size: 102.77KiB
+Output model: ASR_Model16_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 7.33MiB
+On-chip memory used for caching model parameters: 106.50KiB
+Off-chip memory used for streaming uncached model parameters: 3.00KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model16_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+
+Input model: ASR_Model17.tflite
+Input size: 102.77KiB
+Output model: ASR_Model17_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 7.23MiB
+On-chip memory used for caching model parameters: 106.50KiB
+Off-chip memory used for streaming uncached model parameters: 3.00KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model17_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+
+Input model: ASR_Model18.tflite
+Input size: 102.77KiB
+Output model: ASR_Model18_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 7.12MiB
+On-chip memory used for caching model parameters: 106.50KiB
+Off-chip memory used for streaming uncached model parameters: 3.00KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model18_edgetpu.log
+
+Operator                       Count      Status
+
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model19.tflite
+Input size: 102.77KiB
+Output model: ASR_Model19_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 7.02MiB
+On-chip memory used for caching model parameters: 106.50KiB
+Off-chip memory used for streaming uncached model parameters: 3.00KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model19_edgetpu.log
+
+Operator                       Count      Status
+
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model1.tflite
+Input size: 102.77KiB
+Output model: ASR_Model1_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.92MiB
+On-chip memory used for caching model parameters: 26.00KiB
+Off-chip memory used for streaming uncached model parameters: 83.50KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model1_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+
+Input model: ASR_Model20.tflite
+Input size: 102.77KiB
+Output model: ASR_Model20_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.89MiB
+On-chip memory used for caching model parameters: 26.00KiB
+Off-chip memory used for streaming uncached model parameters: 83.50KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model20_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+
+Input model: ASR_Model21.tflite
+Input size: 102.77KiB
+Output model: ASR_Model21_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.87MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model21_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+
+Input model: ASR_Model22.tflite
+Input size: 102.77KiB
+Output model: ASR_Model22_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.85MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model22_edgetpu.log
+
+Operator                       Count      Status
+
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+
+Input model: ASR_Model23.tflite
+Input size: 102.77KiB
+Output model: ASR_Model23_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.83MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model23_edgetpu.log
+
+Operator                       Count      Status
+
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model24.tflite
+Input size: 102.77KiB
+Output model: ASR_Model24_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.81MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model24_edgetpu.log
+
+Operator                       Count      Status
+
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model25.tflite
+Input size: 102.77KiB
+Output model: ASR_Model25_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.80MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model25_edgetpu.log
+
+Operator                       Count      Status
+
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model26.tflite
+Input size: 102.77KiB
+Output model: ASR_Model26_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.78MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model26_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+
+Input model: ASR_Model27.tflite
+Input size: 102.77KiB
+Output model: ASR_Model27_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.76MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model27_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+
+Input model: ASR_Model28.tflite
+Input size: 102.77KiB
+Output model: ASR_Model28_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.74MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model28_edgetpu.log
+
+Operator                       Count      Status
+
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model29.tflite
+Input size: 102.77KiB
+Output model: ASR_Model29_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.73MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model29_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+
+Input model: ASR_Model2.tflite
+Input size: 102.77KiB
+Output model: ASR_Model2_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.71MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model2_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+
+Input model: ASR_Model30.tflite
+Input size: 102.77KiB
+Output model: ASR_Model30_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.69MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model30_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+
+Input model: ASR_Model31.tflite
+Input size: 102.77KiB
+Output model: ASR_Model31_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.68MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model31_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+
+Input model: ASR_Model32.tflite
+Input size: 102.77KiB
+Output model: ASR_Model32_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.66MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model32_edgetpu.log
+
+Operator                       Count      Status
+
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model33.tflite
+Input size: 102.77KiB
+Output model: ASR_Model33_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.64MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model33_edgetpu.log
+
+Operator                       Count      Status
+
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model34.tflite
+Input size: 102.77KiB
+Output model: ASR_Model34_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.62MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model34_edgetpu.log
+
+Operator                       Count      Status
+
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model35.tflite
+Input size: 102.77KiB
+Output model: ASR_Model35_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.61MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model35_edgetpu.log
+
+Operator                       Count      Status
+
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model36.tflite
+Input size: 102.77KiB
+Output model: ASR_Model36_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.59MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model36_edgetpu.log
+
+Operator                       Count      Status
+
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+
+Input model: ASR_Model37.tflite
+Input size: 102.77KiB
+Output model: ASR_Model37_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.57MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model37_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+
+Input model: ASR_Model38.tflite
+Input size: 102.77KiB
+Output model: ASR_Model38_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.55MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model38_edgetpu.log
+
+Operator                       Count      Status
+
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+
+Input model: ASR_Model39.tflite
+Input size: 102.77KiB
+Output model: ASR_Model39_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.54MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model39_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+
+Input model: ASR_Model3.tflite
+Input size: 102.77KiB
+Output model: ASR_Model3_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.52MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model3_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+
+Input model: ASR_Model40.tflite
+Input size: 102.77KiB
+Output model: ASR_Model40_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.50MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model40_edgetpu.log
+
+Operator                       Count      Status
+
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model41.tflite
+Input size: 102.77KiB
+Output model: ASR_Model41_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.48MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model41_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+
+Input model: ASR_Model42.tflite
+Input size: 102.77KiB
+Output model: ASR_Model42_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.47MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model42_edgetpu.log
+
+Operator                       Count      Status
+
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model43.tflite
+Input size: 102.77KiB
+Output model: ASR_Model43_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.45MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model43_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+
+Input model: ASR_Model44.tflite
+Input size: 102.77KiB
+Output model: ASR_Model44_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.43MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model44_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+
+Input model: ASR_Model45.tflite
+Input size: 102.77KiB
+Output model: ASR_Model45_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.42MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model45_edgetpu.log
+
+Operator                       Count      Status
+
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model46.tflite
+Input size: 102.77KiB
+Output model: ASR_Model46_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.40MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model46_edgetpu.log
+
+Operator                       Count      Status
+
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model47.tflite
+Input size: 102.77KiB
+Output model: ASR_Model47_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.38MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model47_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+
+Input model: ASR_Model48.tflite
+Input size: 102.77KiB
+Output model: ASR_Model48_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.36MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model48_edgetpu.log
+
+Operator                       Count      Status
+
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model49.tflite
+Input size: 102.77KiB
+Output model: ASR_Model49_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.35MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model49_edgetpu.log
+
+Operator                       Count      Status
+
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model4.tflite
+Input size: 102.77KiB
+Output model: ASR_Model4_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.33MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model4_edgetpu.log
+
+Operator                       Count      Status
+
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model50.tflite
+Input size: 102.77KiB
+Output model: ASR_Model50_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.31MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model50_edgetpu.log
+
+Operator                       Count      Status
+
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+
+Input model: ASR_Model5.tflite
+Input size: 102.77KiB
+Output model: ASR_Model5_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.29MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model5_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+
+Input model: ASR_Model6.tflite
+Input size: 102.77KiB
+Output model: ASR_Model6_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.28MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model6_edgetpu.log
+
+Operator                       Count      Status
+
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+
+Input model: ASR_Model7.tflite
+Input size: 102.77KiB
+Output model: ASR_Model7_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.26MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model7_edgetpu.log
+
+Operator                       Count      Status
+
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+
+Input model: ASR_Model8.tflite
+Input size: 102.77KiB
+Output model: ASR_Model8_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.24MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model8_edgetpu.log
+
+Operator                       Count      Status
+
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+
+Input model: ASR_Model9.tflite
+Input size: 102.77KiB
+Output model: ASR_Model9_edgetpu.tflite
+Output size: 172.56KiB
+On-chip memory available for caching model parameters: 6.22MiB
+On-chip memory used for caching model parameters: 17.75KiB
+Off-chip memory used for streaming uncached model parameters: 89.69KiB
+Number of Edge TPU subgraphs: 1
+Total number of operations: 12
+Operation log: ASR_Model9_edgetpu.log
+
+Operator                       Count      Status
+
+SOFTMAX                        1          Mapped to Edge TPU
+FULLY_CONNECTED                2          Mapped to Edge TPU
+ADD                            2          Mapped to Edge TPU
+MAX_POOL_2D                    2          Mapped to Edge TPU
+MUL                            2          Mapped to Edge TPU
+CONV_2D                        2          Mapped to Edge TPU
+DEPTHWISE_CONV_2D              1          Mapped to Edge TPU
