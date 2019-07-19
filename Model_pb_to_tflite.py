@@ -121,8 +121,8 @@ if __name__ == "__main__":
             )
         )
 
-    ''' 
-    讀取來源模型，此來源模型為已凍結圖層之模型，針對使用 tf_nightly 
+    '''
+    讀取來源模型，此來源模型為已凍結圖層之模型，針對使用 tf_nightly
     https://www.tensorflow.org/api_docs/python/tf/lite/TFLiteConverter#from_frozen_graph
     '''
     # for tf_nightly
@@ -142,16 +142,16 @@ if __name__ == "__main__":
     '''
     Class TFLiteConverter
     https://www.tensorflow.org/api_docs/python/tf/lite/TFLiteConverter#attributes
-    
+
     For 'inference_type' and 'inference_input_type' Attributes
     -----------------------------------------------------------------------------------------------------------------------------
-    If inference_type is tf.uint8, signaling conversion to a fully quantized model from a quantization-aware trained input model, 
-    then inference_input_type defaults to tf.uint8    
+    If inference_type is tf.uint8, signaling conversion to a fully quantized model from a quantization-aware trained input model,
+    then inference_input_type defaults to tf.uint8
     如果converter.inference_type是tf.uint8，在信號轉換完整量化模型中，輸入模型經過量化感知訓練過程，預設inference_input_type為tf.uint8格式。
 
     For 'inference_output_type' and 'inference_input_type' Attributes
     -----------------------------------------------------------------------------------------------------------------------------
-    If inference_type is tf.uint8, signaling conversion to a fully quantized model from a quantization-aware trained output model, 
+    If inference_type is tf.uint8, signaling conversion to a fully quantized model from a quantization-aware trained output model,
     then inference_output_type defaults to tf.uint8.
     如果converter.inference_type是tf.uint8，在信號轉換完整量化模型中，輸入模型經過量化感知訓練過程，預設inference_output_type為tf.uint8格式。
 
@@ -162,7 +162,7 @@ if __name__ == "__main__":
     ''' 設置轉換型態為 uint8 針對使用標準Tensorflow版本 '''
     # converter.inference_type = tf.contrib.lite.constants.QUANTIZED_UINT8
 
-    ''' 
+    '''
     取得讀取模型之輸入層，回傳模型之輸入向量之名稱
     Returns a list of the names of the input tensors.
     https://www.tensorflow.org/api_docs/python/tf/lite/TFLiteConverter#get_input_arrays
@@ -174,8 +174,8 @@ if __name__ == "__main__":
     converter.quantized_input_stats = {
         input_arrays[0]: (0.0, 255.0)}  # (mean, stddev)
 
-    ''' 
-    進行轉換模型為TFLite格式模型 
+    '''
+    進行轉換模型為TFLite格式模型
     https://www.tensorflow.org/api_docs/python/tf/lite/TFLiteConverter#convert
     '''
     tflite_model = converter.convert()
@@ -183,6 +183,10 @@ if __name__ == "__main__":
     ''' 輸出轉換後tflite格式模型 '''
     with open(output_model_path, "wb") as f:
         f.write(tflite_model)
+
+    convert_speed_time = (time.time() - Start_Time)
+
+    print("\nConvert Speed Time: {:.2f}s\n".format(convert_speed_time))
 
     print("\n[Model_to_TFLite] 讀取量化轉換後TFLite model >> [{}] <<".format(
         output_model_path
@@ -312,7 +316,9 @@ if __name__ == "__main__":
         SQL_result[0][0],
     ))
 
-    print("\nSpeed time: {:.2f}s\n".format((time.time() - Start_Time)))
+    all_speed_time = (time.time() - Start_Time)
+
+    print("\nSpeed time: {:.2f}s\n".format(all_speed_time))
 
     print("可在終端機使用下列命令，來進行EdgeTPU Compiler TFLite model\n>> edgetpu_compiler -s {} <<\n".format(
         output_model_path
