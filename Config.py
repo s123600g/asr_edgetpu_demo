@@ -37,6 +37,7 @@ class Config(object):
         Audio_Data_DirectoryName
     )
 
+    ''' 預測資料來源參數設置 '''
     Prediction_Audio_Data_DirectoryName = "prediction_data"
     Prediction_Audio_Data_Path = os.path.join(
         os.getcwd(),
@@ -114,6 +115,5 @@ class Config(object):
         os.getcwd(), Model_DirectoryName, Model_PB_DirectoryName, Model_PB_Name
     )
 
-    ''' '''
     input_arrays = ["conv2d_input"]
     output_arrays = ["dense_1/Softmax"]

@@ -61,8 +61,9 @@ def main():
                         # 存放每一列的欄位資料
                         valid_data.append(float(feature))
 
+    ''' 轉換語音特徵向量為numpy array，並且將資料型態轉為 uint8格式 '''
     valid_data = np.array(valid_data).astype('uint8')
-    # print("[classify_ASR] Valid data：{}".format(valid_data))
+    print("[classify_ASR] Valid data：{}".format(valid_data))
 
     get_score_list = engine.ClassifyWithASR_Feature(valid_data, top_k=3)
     print("[classify_ASR] get_score_list：{}".format(get_score_list))

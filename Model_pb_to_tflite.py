@@ -156,10 +156,10 @@ if __name__ == "__main__":
     如果converter.inference_type是tf.uint8，在信號轉換完整量化模型中，輸入模型經過量化感知訓練過程，預設inference_output_type為tf.uint8格式。
 
     '''
-    ''' 設置轉換型態為 uint8 針對使用 tf_nightly '''
+    ''' 設置權重型態轉換為 uint8 針對使用 tf_nightly '''
     converter.inference_type = tf.uint8  # for tf_nightly
 
-    ''' 設置轉換型態為 uint8 針對使用標準Tensorflow版本 '''
+    ''' 設置權重型態轉換為 uint8 針對使用標準Tensorflow版本 '''
     # converter.inference_type = tf.contrib.lite.constants.QUANTIZED_UINT8
 
     '''
@@ -172,7 +172,8 @@ if __name__ == "__main__":
     # print("input_arrays: {}".format(input_arrays))
 
     converter.quantized_input_stats = {
-        input_arrays[0]: (0.0, 255.0)}  # (mean, stddev)
+        input_arrays[0]: (0.0, 255.0)  # (mean, stddev)
+    }
 
     '''
     進行轉換模型為TFLite格式模型

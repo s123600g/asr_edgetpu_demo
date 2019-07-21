@@ -34,6 +34,7 @@ from tensorflow.keras import backend as k
 from tensorflow.keras import Sequential, Model
 from tensorflow.keras.layers import Dense, Dropout, Flatten
 from tensorflow.keras.layers import Conv2D, Activation, MaxPooling2D, BatchNormalization
+from tensorflow.keras.utils import plot_model
 
 import os
 import tensorflow as tf
@@ -211,8 +212,6 @@ def build_model():
 
 if __name__ == "__main__":
 
-    # try:
-
     Start_Time = time.time()
 
     # print(device_lib.list_local_devices(), end="\n\n")
@@ -307,6 +306,10 @@ if __name__ == "__main__":
             callbacks=callbacks
         )
 
+        ''' 將模型結構輸出成圖片檔 '''
+        plot_model(net_model, to_file=os.path.join(
+            os.getcwd(), 'model', 'model_visualized.png'))
+
         ''' 將tensor圖層與紀錄點存檔 '''
         saver = tf.compat.v1.train.Saver()  # for tf_nightly
         # saver = tf.train.Saver()
@@ -350,12 +353,12 @@ if __name__ == "__main__":
         '''
         tf.keras.backend.set_learning_phase(0)
 
-        ''' 取得模型圖層骨幹 '''
+        ''' 取得模型結構 '''
         eval_model = build_model()
 
         ''' 
         建立量化之驗證圖層，將輸入圖層重新建置模擬量化
-        https://www.tensorflow.org/api_docs/python/tf/contrib/quantize/create_training_graph
+        https://www.tensorflow.org/api_docs/python/tf/contrib/quantize/create_eval_graph
         '''
         tf.contrib.quantize.create_eval_graph(
             input_graph=eval_graph  # 模型圖層
@@ -394,15 +397,15 @@ if __name__ == "__main__":
         #     [eval_model.output.op.name]
         # ))
 
-        input_arrays.append(eval_model.input.op.name)
-        print("\n[Train_Data] Model_Input_Layer_Name：{}".format(
-            input_arrays[0]
-        ))
+        # input_arrays.append(eval_model.input.op.name)
+        # print("\n[Train_Data] Model_Input_Layer_Name：{}".format(
+        #     input_arrays[0]
+        # ))
 
-        output_arrays.append(eval_model.output.op.name)
-        print("[Train_Data] Model_Output_Layer_Name：{}".format(
-            output_arrays[0]
-        ))
+        # output_arrays.append(eval_model.output.op.name)
+        # print("[Train_Data] Model_Output_Layer_Name：{}".format(
+        #     output_arrays[0]
+        # ))
 
         print("[Train_Data] Model_PB_Path：{}".format(Config.Model_PB_Path))
 
@@ -410,38 +413,6 @@ if __name__ == "__main__":
         with open(Config.Model_PB_Path, 'wb') as f:
             f.write(frozen_graph_def.SerializeToString())
 
-    # # converter = tf.contrib.lite.TFLiteConverter.from_frozen_graph(
-    # #     Config.Model_PB_Path,
-    # #     input_arrays,
-    # #     output_arrays
-    # # )
-
-    # # # for tf_nightly
-    # converter = tf.lite.TFLiteConverter.from_frozen_graph(
-    #     Config.Model_PB_Path,
-    #     input_arrays,
-    #     output_arrays
-    # )
-
-    # ''' 設置轉換型態為uint8/QUANTIZED_UINT8 '''
-    # converter.inference_type = tf.uint8  # for tf_nightly
-    # # converter.inference_type = tf.contrib.lite.constants.QUANTIZED_UINT8
-    # input_arrays = converter.get_input_arrays()
-
-    # # print("input_arrays: {}".format(input_arrays))
-    # converter.quantized_input_stats = {
-    #     input_arrays[0]: (0.0, 255.0)}  # (mean, stddev)
-
-    # tflite_model = converter.convert()
-
-    # ''' 輸出轉換後tflite格式模型 '''
-    # with open(Config.Output_Model_Path, "wb") as f:
-    #     f.write(tflite_model)
-
     end_time = '{:.2f}'.format((time.time() - Start_Time))
 
     print("\nSpeed time: {}s".format(end_time))
-
-    # except Exception as err:
-
-    #     print("\n>>> {} <<<".format(err))

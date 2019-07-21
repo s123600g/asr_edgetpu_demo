@@ -99,11 +99,8 @@ class ClassificationEngine(BasicEngine):
             input_tensor_shape
         ))
 
-        # _, height, width, _ = input_tensor_shape
-
         # print("[ClassificationEngine] Fdata{}".format(Fdata))
 
-        # print("[ClassificationEngine] resample： {}".format(resample))
         print("[ClassificationEngine] numpy img shape： {}".format(
             numpy.asarray(Fdata).shape
         ))

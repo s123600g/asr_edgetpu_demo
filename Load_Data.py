@@ -169,8 +169,8 @@ class Load_Data():
 
             print("[Load_Data]Start load audio data....")
 
-            # print("Audio class quantity: {}".format(
-            #     len(os.listdir(self.Config.Audio_Data_Path))))
+            print("Audio class quantity: {}".format(
+                len(os.listdir(self.Config.Audio_Data_Path))))
 
             test_first = True
 

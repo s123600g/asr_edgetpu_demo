@@ -257,9 +257,9 @@ class Gen_DataSet:
         {0: 'backward', 1: 'bed', 2: 'bird', 3: 'cat', 4: 'dog', 5: 'down', 6: 'eight', 7: 'five', 8: 'follow', 9: 'forward', 10: 'four', 11: 'go', 12: 'happy', 13: 'house', 14: 'learn', 15: 'left', 16: 'marvin', 17: 'nine', 18: 'no', 19: 'off', 20: 'on', 21: 'one', 22: 'right', 23: 'seven', 24: 'sheila', 25: 'six', 26: 'stop', 27: 'three', 28: 'tree', 29: 'two', 30: 'up', 31: 'visual', 32: 'wow', 33: 'yes', 34: 'zero'}\n\n
 
         原始所有特徵對應分類標籤資訊矩陣內容如下： \n
-        ['wow' 'nine' 'five' ... 'dog' 'tree' 'forward'] \n \n
+        ['wow', 'nine', 'five', ... ,'dog' ,'tree', 'forward'] \n \n
         轉換分類標籤對應編號後之所有特徵對應分類標籤資訊矩陣內容如下：\n
-        ['32' '17' '7' ... '4' '28' '9']\n
+        [32 ,17,7, ... ,4,28,9]\n
         '''
 
         for index in list(self.class_label.keys()):
@@ -283,7 +283,7 @@ class Gen_DataSet:
         Step1.切割資料集，產生訓練與驗證資料集\n
         Step2.切割資料集，產生測試資料集 \n
         Step3.將訓練、驗證、測試資料集轉換成numpy array型態 \n
-        Step4.將訓練、驗證、測試資料集小數維度轉換 \n
+        Step4.將訓練、驗證、測試資料集小數精度型態轉換 \n
         Step5.將訓練資料集向量維度轉換(Reshape) \n
         '''
 
@@ -317,12 +317,6 @@ class Gen_DataSet:
         self.Config.Test_DataSet = self.Config.Test_DataSet.astype('float32')
 
         ''' 將訓練資料集維度轉換 '''
-        # self.Config.Train_DataSet = self.Config.Train_DataSet.reshape(
-        #     self.Config.Train_DataSet.shape[1],  # 資料矩陣之列
-        #     self.Config.Train_DataSet.shape[2],  # 資料矩陣之欄
-        #     self.Config.channel   # 單一通道(single channel)
-        # )
-
         self.Config.Train_DataSet = self.Config.Train_DataSet.reshape(
             self.Config.Train_DataSet.shape[0],  # 資料總筆數
             self.Config.Train_DataSet.shape[1],  # 資料矩陣之列
@@ -331,12 +325,6 @@ class Gen_DataSet:
         )
 
         ''' 將驗證資料集維度轉換 '''
-        # self.Config.Valid_DataSet = self.Config.Valid_DataSet.reshape(
-        #     self.Config.Valid_DataSet.shape[1],  # 資料矩陣之列
-        #     self.Config.Valid_DataSet.shape[2],  # 資料矩陣之欄
-        #     self.Config.channel  # 單一通道(single channel)
-        # )
-
         self.Config.Valid_DataSet = self.Config.Valid_DataSet.reshape(
             self.Config.Valid_DataSet.shape[0],  # 資料總筆數
             self.Config.Valid_DataSet.shape[1],  # 資料矩陣之列
@@ -345,12 +333,6 @@ class Gen_DataSet:
         )
 
         ''' 將測試資料集維度轉換 '''
-        # self.Config.Test_DataSet = self.Config.Test_DataSet.reshape(
-        #     self.Config.Test_DataSet.shape[1],  # 資料矩陣之列
-        #     self.Config.Test_DataSet.shape[2],  # 資料矩陣之欄
-        #     self.Config.channel   # 單一通道(single channel)
-        # )
-
         self.Config.Test_DataSet = self.Config.Test_DataSet.reshape(
             self.Config.Test_DataSet.shape[0],  # 資料總筆數
             self.Config.Test_DataSet.shape[1],  # 資料矩陣之列
@@ -406,7 +388,7 @@ class Gen_DataSet:
 
         處理程序步驟如下：\n
         Step1. 執行資料分類標籤之對應編號存進資料庫\n
-        Step2. 讀取語音特徵值檔案，取得每一筆特徵值內容與分類標\n
+        Step2. 讀取語音特徵值檔案，取得每一筆特徵值內容與分類標籤\n
         Step3. 將所有已讀取完每一筆特徵值內容與分類標籤進行資料混淆矩陣打散\n
         Step4. 將每一筆特徵值所屬分類標籤進行轉換成對應編號，與資料庫每一分類所屬編號內容相對應\n
         Step5. 產生訓練模型所需資料集(訓練、驗證、測試)\n
