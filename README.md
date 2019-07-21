@@ -5,7 +5,6 @@
 使用資料集資訊
 --
 使用在Tensorflow官方 Simple Audio Recognition 例子內所使用之語音資料集<br/>
-[Simple Audio Recognition](https://www.tensorflow.org/tutorials/sequences/audio_recognition)
-
-[speech_commands_v0.02.tar.gz](https://storage.cloud.google.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz)
+[Simple Audio Recognition](https://www.tensorflow.org/tutorials/sequences/audio_recognition)<br/>
+[speech_commands_v0.02.tar.gz](https://storage.cloud.google.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz)<br/>
 
