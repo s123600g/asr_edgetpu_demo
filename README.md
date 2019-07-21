@@ -22,7 +22,7 @@
 Medium 文章
 --
 1. [使用EdgeTpu應用在語音模型預測之簡單實例(一)-前言與開發環境配置](https://medium.com/@s123600g/%E4%BD%BF%E7%94%A8edgetpu%E6%87%89%E7%94%A8%E5%9C%A8%E8%AA%9E%E9%9F%B3%E6%A8%A1%E5%9E%8B%E9%A0%90%E6%B8%AC%E4%B9%8B%E7%B0%A1%E5%96%AE%E5%AF%A6%E4%BE%8B-%E4%B8%80-%E5%89%8D%E8%A8%80%E8%88%87%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83%E9%85%8D%E7%BD%AE-d8720eb0d970)<br/>
-2. [使用EdgeTpu應用在語音模型預測之簡單實例(二)-語音資料集處理]()<br/>
+2. [使用EdgeTpu應用在語音模型預測之簡單實例(二)-語音資料集處理](https://medium.com/@s123600g/%E4%BD%BF%E7%94%A8edgetpu%E6%87%89%E7%94%A8%E5%9C%A8%E8%AA%9E%E9%9F%B3%E6%A8%A1%E5%9E%8B%E9%A0%90%E6%B8%AC%E4%B9%8B%E7%B0%A1%E5%96%AE%E5%AF%A6%E4%BE%8B-%E4%BA%8C-%E8%AA%9E%E9%9F%B3%E8%B3%87%E6%96%99%E9%9B%86%E8%99%95%E7%90%86-a9a1f4492bc0)<br/>
 3. [使用EdgeTpu應用在語音模型預測之簡單實例(三)-建立模型與訓練]()<br/>
 4. [使用EdgeTpu應用在語音模型預測之簡單實例(四)-模型轉換格式為tflite]()<br/>
 5. [使用EdgeTpu應用在語音模型預測之簡單實例(五)-使用 edgetpu_compiler 轉換 EdgeTpu 可識別 tflite模型]()<br/>
