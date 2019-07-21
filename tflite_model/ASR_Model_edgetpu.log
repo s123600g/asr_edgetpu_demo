@@ -1,5 +1,5 @@
 Edge TPU Compiler version 1.0.249710469
-Input: ASR_Model.tflite
+Input: /home/jyu/Program/Audio_Speech_Recognition_TPU_Demo/tflite_model/ASR_Model.tflite
 Output: ASR_Model_edgetpu.tflite
 
 Operator                       Count      Status
