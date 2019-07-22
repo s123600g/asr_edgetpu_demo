@@ -196,8 +196,8 @@ class ClassificationEngine(BasicEngine):
         ''' 讀取排序後放置索引位置清單 '''
         for i in indices:
 
-            ''' 判斷該索引位置數值(可信度)是否有達到門檻，大於或等於門檻才符合條件 '''
-            if self._raw_result[i] > threshold:
+            ''' 判斷該索引位置數值(可信度)是否有達到門檻，大於門檻才符合條件 '''
+            if self._raw_result[i] >threshold:
 
                 ''' 將索引與可信度加入結果清單 '''
                 result.append((i, self._raw_result[i]))
