@@ -4,3 +4,4 @@ numpy
 matplotlib
 librosa
 sklearn
+pydot-ng
