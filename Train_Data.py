@@ -58,7 +58,6 @@ CNN_inputlayer_conv2D_kernel_size = (2, 2)
 CNN_inputlayer_Activation = 'relu'
 CNN_inputlayer_conv2D_padding = 'same'
 
-
 CNN_onelayer_conv2D_hidden_unit = 32
 CNN_onelayer_conv2D_kernel_size = (2, 2)
 CNN_onelayer_conv2D_padding = 'same'
@@ -70,11 +69,9 @@ CNN_twolayer_conv2D_kernel_size = (2, 2)
 CNN_twolayer_conv2D_padding = 'same'
 CNN_twolayer_Activation = 'relu'
 CNN_twolayer_MaxPooling2D_pool_size = (2, 2)
-CNN_twolayer_Dropout = 0.25
 
 CNN_full_connectionlayer_Dense = 128
 CNN_full_connectionlayer_Activation = 'relu'
-CNN_full_connectionlayer_Dropout = 0.25
 CNN_ouputlayer_Activation = 'softmax'
 
 ''' 設置模型訓練時之回調函數控制 '''
