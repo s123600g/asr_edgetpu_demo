@@ -19,7 +19,7 @@
 如果要使用此資料集，請在專案目錄內建立一個audio_data目錄，將壓縮檔內audio_data/底下所有檔案移動到audio_data目錄。
 
 
-Slide
+slides
 --
 [使用EdgeTpu應用在語音模型預測之簡單實例](https://docs.google.com/presentation/d/1ymZKADuUzkwwKdbGHvZ2SpFxg3LBCAEO4x32p3buI3U/edit?usp=sharing)
 
