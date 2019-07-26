@@ -212,11 +212,11 @@ class ClassificationEngine(BasicEngine):
         '''
         假設result排序結果如下
 
-           0   1   2 
+           0     1    2 
          *---*---*---*
          | 23| 24| 5 |
          *---*---*---*
-          -2  -1  -0
+          -2    -1    -0
         
         result[:top_k]就是取得範圍從 start ~ (top_k-1)
 
