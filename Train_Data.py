@@ -58,6 +58,7 @@ CNN_inputlayer_conv2D_kernel_size = (2, 2)
 CNN_inputlayer_Activation = 'relu'
 CNN_inputlayer_conv2D_padding = 'same'
 
+
 CNN_onelayer_conv2D_hidden_unit = 32
 CNN_onelayer_conv2D_kernel_size = (2, 2)
 CNN_onelayer_conv2D_padding = 'same'
