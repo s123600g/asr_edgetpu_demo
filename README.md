@@ -22,6 +22,7 @@
  使用 [Python - Librosa](https://librosa.github.io/librosa/install.html) <br/>
  讀取音檔內容使用 --> librosa.core.load <br/>
  擷取MFCC特徵 --> librosa.feature.mfcc <br/>
+ 完整程式碼在 Load_Data.py <br/>
 
 slides
 --
