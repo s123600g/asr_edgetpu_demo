@@ -100,6 +100,8 @@ audio_classlabels.txt：
 
 >  python classify_ASR.py
 
+![image](https://github.com/s123600g/asr_edgetpu_demo/blob/master/images/2020-02-16%2019-58-36%20%E7%9A%84%E8%9E%A2%E5%B9%95%E6%93%B7%E5%9C%96.png)
+
 參考資訊
 --
 1. slides<br/>
