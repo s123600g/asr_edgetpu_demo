@@ -29,7 +29,9 @@ Audio_Data_DirectoryName = "audio_data" # 目錄名稱
 ```
 **Step 3. 執行語音特徵擷取**<br/>
 執行之前請在專案目錄內log_file/底下，建立一個audio_feature空目錄，完成後在執行Gen_Datafile.py。<br/>
+
 > python Gen_Datafile.py
+
 執行完畢之後，會將擷取出來特徵結果文字檔，放在log_file/底下audio_feature目錄，每一個類別結果都會存放在自己分類別名稱命名之目錄，同時會在log_file/audio_classlabels/產生分類對應表(audio_classlabels.txt)<br/>
 
 audio_classlabels.txt：
@@ -73,12 +75,16 @@ audio_classlabels.txt：
 
 **Step 4. 模型建置、訓練、輸出**<br/>
 請執行Gen_Datafile.py。<br/>
+
 >  python Train_Data.py
+
 內部執行程序為：載入特徵資料-->資料處理及產生資料集-->建立模型-->訓練模型-->輸出模型-->存放pb模型在model/model_pb/<br/>
 
 ***Step 5. pb模型轉換成tflite模型、tflite模型再編譯成edgetpu可識別模型**<br/>
 請執行Model_pb_to_tflite.py。<br/>
+
 >  python Model_pb_to_tflite.py
+
 轉換完成tflite模型存放在tflite_model/ASR_Model.tflite，並且會看到一則訊息為：
 ```
 可在終端機使用下列命令，來進行EdgeTPU Compiler TFLite model
@@ -90,6 +96,7 @@ audio_classlabels.txt：
 
 **Step .6 使用 Accelerator 進行分類預測**<br/>
 請將 Google Coral Accelerator 插入USB，執行classify_ASR.py。
+
 >  python classify_ASR.py
 
 參考資訊
