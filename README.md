@@ -9,11 +9,10 @@
 [speech_commands_v0.02.tar.gz](https://storage.cloud.google.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz)<br/>
 <p></p>
 
-#### 本專案所使用資料集，為35個類別，每一個類別各有450個語音特徵，總共有15750個語音特徵資料，連結如下：<br/>
+#### 使用資料集為35個類別，每一個類別各有450個語音特徵，總共有15750個語音特徵資料，連結如下：<br/>
 1. 已事先擷取出語音特徵並存成文字檔：
 [audio_feature_txt](https://drive.google.com/open?id=11X-vlDNjCH4t98fRs5reBuSXolAUeh7b)<br/>
 如果要使用此資料集，請在專案目錄內log_file/建立一個audio_feature目錄，將壓縮檔內audio_feature/底下所有檔案目錄移動到audio_feature底下。
-
 2.  原始語音wav檔：
 [audio_feature_wav](https://drive.google.com/open?id=1xnBpX8WsJtV2hbcY90O0Pw17sXZmpi80)<br/>
 
