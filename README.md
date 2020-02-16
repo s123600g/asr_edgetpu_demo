@@ -95,6 +95,10 @@ audio_classlabels.txt：
 
 內部執行程序為：載入特徵資料-->資料處理及產生資料集-->建立模型-->訓練模型-->輸出模型-->存放pb模型在model/model_pb/<br/>
 
+![image](https://github.com/s123600g/asr_edgetpu_demo/blob/master/images/2020-02-16%2020-16-09%20%E7%9A%84%E8%9E%A2%E5%B9%95%E6%93%B7%E5%9C%96.png)
+
+![image](https://github.com/s123600g/asr_edgetpu_demo/blob/master/images/2020-02-16%2020-17-14%20%E7%9A%84%E8%9E%A2%E5%B9%95%E6%93%B7%E5%9C%96.png)
+
 **Step 5. pb模型轉換成tflite模型、tflite模型再編譯成edgetpu可識別模型**<br/>
 請執行Model_pb_to_tflite.py。<br/>
 
