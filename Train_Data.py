@@ -48,16 +48,14 @@ batch_size = 100
 epochs = 20
 quant_delay = 10
 verbose = 1
-# CNN_optimizer = 'Adadelta'
+
 CNN_optimizer = keras.optimizers.Adadelta(lr=0.5)
-# CNN_loss = 'categorical_crossentropy'
 CNN_loss = keras.losses.categorical_crossentropy
 
 CNN_inputlayer_conv2D_hidden_unit = 32
 CNN_inputlayer_conv2D_kernel_size = (2, 2)
 CNN_inputlayer_Activation = 'relu'
 CNN_inputlayer_conv2D_padding = 'same'
-
 
 CNN_onelayer_conv2D_hidden_unit = 32
 CNN_onelayer_conv2D_kernel_size = (2, 2)
@@ -86,7 +84,6 @@ callbacks = [
                                        verbose=1,
                                        save_weights_only=False
                                        ),
-
 ]
 
 input_arrays = list()
@@ -119,13 +116,11 @@ def build_model():
             kernel_size=CNN_inputlayer_conv2D_kernel_size,
             padding=CNN_inputlayer_conv2D_padding,
             input_shape=input_shape,
-            # activation=CNN_inputlayer_Activation
         )
     )
 
     # 激活函數
     model.add(
-
         Activation(CNN_inputlayer_Activation)
     )
 
@@ -138,8 +133,8 @@ def build_model():
         )
     )
 
+    # 激活函數
     model.add(
-
         Activation(CNN_onelayer_Activation)
     )
 
@@ -164,7 +159,6 @@ def build_model():
 
     # 激活函數
     model.add(
-
         Activation(CNN_twolayer_Activation)
     )
 
@@ -193,7 +187,6 @@ def build_model():
 
     # 激活函數
     model.add(
-
         Activation(CNN_full_connectionlayer_Activation)
     )
 
@@ -242,10 +235,7 @@ if __name__ == "__main__":
     '''
     train_graph = tf.Graph()
     train_sess = tf.compat.v1.Session(graph=train_graph)  # for tf_nightly
-    # train_sess = tf.Session(graph=train_graph)
-
     tf.compat.v1.keras.backend.set_session(train_sess)  # for tf_nightly
-    # tf.keras.backend.set_session(train_sess)
 
     with train_graph.as_default():
 
@@ -277,7 +267,6 @@ if __name__ == "__main__":
         '''
         # for tf_nightly
         train_sess.run(tf.compat.v1.global_variables_initializer())
-        # train_sess.run(tf.global_variables_initializer())
 
         ''' 編譯模型架構 '''
         net_model.compile(
@@ -305,19 +294,24 @@ if __name__ == "__main__":
         )
 
         ''' 將模型結構輸出成圖片檔 '''
-        plot_model(net_model, to_file=os.path.join(
-            os.getcwd(), 'model', 'model_visualized.png'))
+        plot_model(
+            net_model,
+            to_file=os.path.join(
+                os.getcwd(),
+                'model',
+                'model_visualized.png'
+            )
+        )
 
         ''' 將tensor圖層與紀錄點存檔 '''
         saver = tf.compat.v1.train.Saver()  # for tf_nightly
-        # saver = tf.train.Saver()
         saver.save(train_sess, Config.Model_checkpoints_Path)
 
         ''' 建立訓練過程之準確度與損失函數變化圖片 '''
         history_plot.plot_figure(
             history,
             os.path.join(os.getcwd(), Config.Plot_Figure_DirectoryName),
-            "Audio_Speech_Training"
+            "Training"
         )
 
         ''' 驗證訓練後模型 '''
@@ -328,8 +322,8 @@ if __name__ == "__main__":
         )
 
         print("\n\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-        print(
-            "Evalluate Loss：[{:.2f}] | Accuracy：[{:.2f}] ".format(score[0], score[1]))
+        print("Evalluate Loss：[{:.2f}] | Accuracy：[{:.2f}] ".format(
+            score[0], score[1]))
         print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 
         ''' 儲存訓練後模型和權重 '''
@@ -339,8 +333,6 @@ if __name__ == "__main__":
     ''' Eval model '''
     eval_graph = tf.Graph()
     eval_sess = tf.compat.v1.Session(graph=eval_graph)  # for tf_nightly
-    # tf.keras.backend.clear_session()
-    # eval_sess = tf.Session(graph=eval_graph)
     tf.keras.backend.set_session(eval_sess)
 
     with eval_graph.as_default():
@@ -371,7 +363,6 @@ if __name__ == "__main__":
 
         ''' 重新載入儲存權重變數，透過儲存紀錄點(存放權重參數) '''
         saver = tf.compat.v1.train.Saver()  # for tf_nightly
-        # saver = tf.train.Saver()
         saver.restore(eval_sess, Config.Model_checkpoints_Path)
 
         ''' 
@@ -384,12 +375,6 @@ if __name__ == "__main__":
             eval_graph_def,
             [eval_model.output.op.name]
         )
-
-        # frozen_graph_def = tf.graph_util.convert_variables_to_constants(
-        #     eval_sess,
-        #     eval_graph_def,
-        #     [eval_model.output.op.name]
-        # )
 
         # print("[Train_Data]\n{}\n".format(
         #     [eval_model.output.op.name]

@@ -374,7 +374,6 @@ class Load_Data():
                         os.getcwd(),
                         self.Config.Log_DirectoryName,
                         self.Config.Log_ClassLabelsData_DirectoryName,
-                        # 檔案名稱
                         self.Config.Log_ClassLabelsData_name
                     )
                 )
@@ -385,10 +384,8 @@ class Load_Data():
                     os.getcwd(),
                     self.Config.Log_DirectoryName,
                     self.Config.Log_ClassLabelsData_DirectoryName,
-                    # 檔案名稱
                     self.Config.Log_ClassLabelsData_name
                 ),
-
                 # 給予類別編碼後結果
                 enumerate(self.class_labels)
             )

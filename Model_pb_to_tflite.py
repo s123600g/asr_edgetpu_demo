@@ -30,10 +30,6 @@ https://www.tensorflow.org/lite/convert/python_api#exporting_a_tfkeras_file_
 How to convert keras(h5) file to a tflite file?
 https://stackoverflow.com/questions/53256877/how-to-convert-kerash5-file-to-a-tflite-file
 
-需注意！！！
-'lite.TFLiteConverter.from_keras_model_file()' 要求tensorflow版本最低為 1.12
-針對 1.9-1.11 版本 使用 'lite.TocoConverter'
-針對 1.7-1.8 版本 使用 'lite.toco_convert'
 '''
 
 from Config import Config
@@ -132,13 +128,6 @@ if __name__ == "__main__":
         Config.output_arrays  # 來自模型輸出張量之凍結圖層清單，實際上是輸出層之名稱
     )
 
-    ''' 讀取來源模型，針對使用標準Tensorflow版本 '''
-    # converter = tf.contrib.lite.TFLiteConverter.from_frozen_graph(
-    #     Config.Model_PB_Path, # 模型來源
-    #     Config.input_arrays, # 來自模型輸入張量之凍結圖層清單，實際上是輸入層之名稱
-    #     Config.output_arrays # 來自模型輸出張量之凍結圖層清單，實際上是輸出層之名稱
-    # )
-
     '''
     Class TFLiteConverter
     https://www.tensorflow.org/api_docs/python/tf/lite/TFLiteConverter#attributes
@@ -157,10 +146,7 @@ if __name__ == "__main__":
 
     '''
     ''' 設置權重型態轉換為 uint8 針對使用 tf_nightly '''
-    converter.inference_type = tf.uint8  # for tf_nightly
-
-    ''' 設置權重型態轉換為 uint8 針對使用標準Tensorflow版本 '''
-    # converter.inference_type = tf.contrib.lite.constants.QUANTIZED_UINT8
+    converter.inference_type = tf.uint8 
 
     '''
     取得讀取模型之輸入層，回傳模型之輸入向量之名稱
