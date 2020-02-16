@@ -29,51 +29,46 @@ import numpy as np
 
 
 class Config(object):
+    '''
+    ASR project basic argument settings
+    '''
 
-    ''' 音頻資料來源參數設置 '''
+    ''' 
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    data sources settings
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    '''
+    # Data sources for wav file settings  ,  directory name and  path
+    Audio_Data_Directory_Root = "/home/jyu/Data"
     Audio_Data_DirectoryName = "audio_data"
+    # Generate a full data sources path
     Audio_Data_Path = os.path.join(
-        os.getcwd(),
+        Audio_Data_Directory_Root,
         Audio_Data_DirectoryName
     )
 
-    ''' 預測資料來源參數設置 '''
+    # Data sources for prediction file settings , directory name and  path
+    Prediction_Audio_Data_Directory_Root = "/home/jyu/Data"
     Prediction_Audio_Data_DirectoryName = "prediction_data"
+    # Generate a full data sources path
     Prediction_Audio_Data_Path = os.path.join(
-        os.getcwd(),
+        Prediction_Audio_Data_Directory_Root,
         Prediction_Audio_Data_DirectoryName
     )
+    '''
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    '''
 
-    ''' 輸出檔案參數配置 '''
-    Log_DirectoryName = "log_file"
-    log_file_type = "txt"
-    Log_FeatureData_DirectoryName = "audio_feature"
-    Log_ClassLabelsData_DirectoryName = "audio_classlabels"
-    Log_Recognition_Result_DirectoryName = "recognition_result"
-    Log_ClassLabelsData_name = str(
-        Log_ClassLabelsData_DirectoryName + "." + log_file_type)
-
-    Log_TensorBoard_DirectoryName = "TensorBoard"
-    Log_TensorBoard_Path = os.path.join(
-        os.getcwd(), Log_DirectoryName, Log_TensorBoard_DirectoryName, "logs"
-    )
-
-    ''' 輸出訓練過程變化圖檔案參數配置 '''
-    Plot_Figure_DirectoryName = "plot_figure"
-
-    ''' 轉換模型參數設置 '''
-    Input_Model_Path = os.path.join(os.getcwd(), "model")
-    Output_Model_Name = "ASR_Model.tflite"
-    Output_Model_Path = os.path.join(
-        os.getcwd(), "tflite_model", Output_Model_Name)
-
-    ''' 資料參數設置 '''
-    # 限制使用的Data總量
-    data_quantity_max = 450
+    ''' 
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    wav data basic argument  settings
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    '''
+    data_quantity_max = 450  # limit wav data quantity for  each class
     sample_rate = 16000
     max_pad_len = 11
-    class_num = 0
-    channel = 1  # 單一通道(single channel)
+    class_num = 0  # class number start value
+    channel = 1  # single channel
     labels = []
     MFCC_Data = []
     Train_DataSet = []
@@ -84,36 +79,106 @@ class Config(object):
     Valid_Labels = []
     data_row = 0
     data_column = 0
+    '''
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    '''
 
-    ''' SQLite DB 參數配置 '''
+    ''' 
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    SQLite DB  settings
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    '''
     SQLite_DB_DirectoryName = "DB"
     SQLite_name = "class.db3"
     db_TableName = 'audioclass'
     column_ClassNum = 'ClassNum'
     column_Classname = 'ClassName'
+    '''
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    '''
 
-    ''' 訓練後模型儲存參數設置 '''
+    ''' 
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ouput log  settings
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    '''
+    # general ouput log
+    Log_DirectoryName = "log_file"
+    log_file_type = "txt"
+    Log_FeatureData_DirectoryName = "audio_feature"
+    Log_ClassLabelsData_DirectoryName = "audio_classlabels"
+    Log_Recognition_Result_DirectoryName = "recognition_result"
+    Log_ClassLabelsData_name = str(
+        Log_ClassLabelsData_DirectoryName + "." + log_file_type
+    )
+
+    # for TensorBoard
+    Log_TensorBoard_DirectoryName = "TensorBoard"
+    Log_TensorBoard_Path = os.path.join(
+        os.getcwd(), Log_DirectoryName, Log_TensorBoard_DirectoryName, "logs"
+    )
+
+    # 輸出訓練過程變化圖檔案放置目錄
+    Plot_Figure_DirectoryName = "plot_figure"
+    '''
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    '''
+
+    ''' 
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    model  settings
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    '''
+    # 訓練後模型儲存參數設置
     Model_DirectoryName = "model"
     Model_Name = "Speech_Recognition_Model.h5"
     Model_Weight_Name = "Speech_Recognition_Weight.h5"
-    Model_Path = os.path.join(os.getcwd(), Model_DirectoryName, Model_Name)
+    Model_Path = os.path.join(
+        os.getcwd(),
+        Model_DirectoryName,
+        Model_Name
+    )
     Model_Weight_Path = os.path.join(
-        os.getcwd(), Model_DirectoryName, Model_Weight_Name)
+        os.getcwd(),
+        Model_DirectoryName,
+        Model_Weight_Name
+    )
     Model_checkpoints_DirectoryName = "checkpoints"
     Model_checkpoints_Path = os.path.join(
-        os.getcwd(), Model_checkpoints_DirectoryName, Model_checkpoints_DirectoryName
+        os.getcwd(),
+        Model_checkpoints_DirectoryName,
+        Model_checkpoints_DirectoryName
     )
 
+    # 轉換模型參數設置
+    Input_Model_Path = os.path.join(os.getcwd(), "model")
+    Output_Model_Name = "ASR_Model.tflite"
+    Output_Model_Path = os.path.join(
+        os.getcwd(), "tflite_model",
+        Output_Model_Name
+    )
+
+    #  model checkpoint
     Model_ModelCheckpoint_DirectoryName = "ModelCheckpoint"
     Model_ModelCheckpoint_Path = os.path.join(
-        os.getcwd(), Model_DirectoryName, Model_ModelCheckpoint_DirectoryName
+        os.getcwd(),
+        Model_DirectoryName,
+        Model_ModelCheckpoint_DirectoryName
     )
 
+    # model save path
     Model_PB_DirectoryName = "model_pb"
     Model_PB_Name = "frozen_model.pb"
     Model_PB_Path = os.path.join(
-        os.getcwd(), Model_DirectoryName, Model_PB_DirectoryName, Model_PB_Name
+        os.getcwd(),
+        Model_DirectoryName,
+        Model_PB_DirectoryName,
+        Model_PB_Name
     )
 
+    # model layers name , input layer and ouput layer
     input_arrays = ["conv2d_input"]
     output_arrays = ["dense_1/Softmax"]
+    '''
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    '''
