@@ -96,6 +96,8 @@ audio_classlabels.txt：
 複製顯示命令並貼在終端機上執行<br/>
 >  edgetpu_compiler -s /home/jyu/Program/Audio_Speech_Recognition_TPU_Demo/tflite_model/ASR_Model.tflite
 
+![image](https://github.com/s123600g/asr_edgetpu_demo/blob/master/images/2020-02-16%2020-06-30%20%E7%9A%84%E8%9E%A2%E5%B9%95%E6%93%B7%E5%9C%96.png)
+
 最後編譯轉換完成tflite模型存放在tflite_model/ASR_Model.tflite <br/>
 
 **Step .6 使用 Accelerator 進行分類預測**<br/>
