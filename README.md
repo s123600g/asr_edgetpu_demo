@@ -16,7 +16,6 @@
 
 2.  原始語音wav檔：
 [audio_feature_wav](https://drive.google.com/open?id=1xnBpX8WsJtV2hbcY90O0Pw17sXZmpi80)<br/>
-如果要使用此資料集，請在專案目錄內建立一個audio_data目錄，將壓縮檔內audio_data/底下所有檔案目錄移動到audio_data底下。
 
  #### 關於語音特徵值MFCC：<br>
  使用 [Python - Librosa](https://librosa.github.io/librosa/install.html) <br/>
