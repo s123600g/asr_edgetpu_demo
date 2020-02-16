@@ -1,7 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
-# 使用EdgeTpu應用在語音模型預測之簡單實例
-
 使用資料集資訊
 --
 使用在Tensorflow官方[Simple Audio Recognition](https://www.tensorflow.org/tutorials/sequences/audio_recognition) 例子內所使用之語音資料集[speech_commands_v0.02.tar.gz](https://storage.cloud.google.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz)<br/>
@@ -19,12 +17,12 @@
  擷取MFCC特徵 --> librosa.feature.mfcc <br/>
  完整程式碼在 Load_Data.py <br/>
 
-slides
+參考資訊
 --
+[1]slides<br/>
 [使用EdgeTpu應用在語音模型預測之簡單實例](https://docs.google.com/presentation/d/1ymZKADuUzkwwKdbGHvZ2SpFxg3LBCAEO4x32p3buI3U/edit?usp=sharing)
 
-Medium 文章
---
+[2]Medium 文章<br/>
 1. [使用EdgeTpu應用在語音模型預測之簡單實例(一)-前言與開發環境配置](https://medium.com/@s123600g/%E4%BD%BF%E7%94%A8edgetpu%E6%87%89%E7%94%A8%E5%9C%A8%E8%AA%9E%E9%9F%B3%E6%A8%A1%E5%9E%8B%E9%A0%90%E6%B8%AC%E4%B9%8B%E7%B0%A1%E5%96%AE%E5%AF%A6%E4%BE%8B-%E4%B8%80-%E5%89%8D%E8%A8%80%E8%88%87%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83%E9%85%8D%E7%BD%AE-d8720eb0d970)<br/>
 2. [使用EdgeTpu應用在語音模型預測之簡單實例(二)-語音資料集處理](https://medium.com/@s123600g/%E4%BD%BF%E7%94%A8edgetpu%E6%87%89%E7%94%A8%E5%9C%A8%E8%AA%9E%E9%9F%B3%E6%A8%A1%E5%9E%8B%E9%A0%90%E6%B8%AC%E4%B9%8B%E7%B0%A1%E5%96%AE%E5%AF%A6%E4%BE%8B-%E4%BA%8C-%E8%AA%9E%E9%9F%B3%E8%B3%87%E6%96%99%E9%9B%86%E8%99%95%E7%90%86-a9a1f4492bc0)<br/>
 3. [使用EdgeTpu應用在語音模型預測之簡單實例(三)-建立模型與訓練](https://medium.com/@s123600g/%E4%BD%BF%E7%94%A8edgetpu%E6%87%89%E7%94%A8%E5%9C%A8%E8%AA%9E%E9%9F%B3%E6%A8%A1%E5%9E%8B%E9%A0%90%E6%B8%AC%E4%B9%8B%E7%B0%A1%E5%96%AE%E5%AF%A6%E4%BE%8B-%E4%B8%89-%E5%BB%BA%E7%AB%8B%E6%A8%A1%E5%9E%8B%E8%88%87%E8%A8%93%E7%B7%B4-3ae20b170eb)<br/>
