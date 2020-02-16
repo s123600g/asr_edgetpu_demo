@@ -80,7 +80,7 @@ audio_classlabels.txt：
 
 內部執行程序為：載入特徵資料-->資料處理及產生資料集-->建立模型-->訓練模型-->輸出模型-->存放pb模型在model/model_pb/<br/>
 
-***Step 5. pb模型轉換成tflite模型、tflite模型再編譯成edgetpu可識別模型**<br/>
+**Step 5. pb模型轉換成tflite模型、tflite模型再編譯成edgetpu可識別模型**<br/>
 請執行Model_pb_to_tflite.py。<br/>
 
 >  python Model_pb_to_tflite.py
@@ -92,6 +92,7 @@ audio_classlabels.txt：
 ```
 複製顯示命令並貼在終端機上執行<br/>
 >  edgetpu_compiler -s /home/jyu/Program/Audio_Speech_Recognition_TPU_Demo/tflite_model/ASR_Model.tflite
+
 最後編譯轉換完成tflite模型存放在tflite_model/ASR_Model.tflite <br/>
 
 **Step .6 使用 Accelerator 進行分類預測**<br/>
