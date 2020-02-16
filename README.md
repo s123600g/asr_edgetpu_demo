@@ -17,7 +17,8 @@
 2.  原始語音wav檔：
 [audio_feature_wav](https://drive.google.com/open?id=1xnBpX8WsJtV2hbcY90O0Pw17sXZmpi80)<br/>
 
- #### 關於語音特徵值MFCC：<br>
+ 關於語音特徵值MFCC：
+ --
  使用 [Python - Librosa](https://librosa.github.io/librosa/install.html) <br/>
  讀取音檔內容使用 --> librosa.core.load <br/>
  擷取MFCC特徵 --> librosa.feature.mfcc <br/>
