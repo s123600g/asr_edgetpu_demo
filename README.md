@@ -47,7 +47,7 @@ Audio_Data_DirectoryName = "audio_data" # 目錄名稱
 
 > python Gen_Datafile.py
 
-執行完畢之後，會將擷取出來特徵結果文字檔，放在log_file/底下audio_feature目錄，每一個類別結果都會存放在自己分類別名稱命名之目錄，同時會在log_file/audio_classlabels/產生分類對應表(audio_classlabels.txt)<br/>
+執行完畢之後，會將擷取出來特徵結果文字檔，放在log_file/audio_feature/，每一個類別結果都會存放在自己類別名稱命名之目錄，同時會在log_file/audio_classlabels/底下產生分類對應表(audio_classlabels.txt)<br/>
 
 audio_classlabels.txt：
 ```
