@@ -78,7 +78,7 @@ For Ubuntu: <br/>
 
 關於模型量化
 --
-根據官方 [Quantization](https://coral.ai/docs/edgetpu/models-intro/#quantization) 說明，目前版本已經可以使用以下方法：<br/>
+根據Google Coral 官方在 [Quantization](https://coral.ai/docs/edgetpu/models-intro/#quantization) 區塊內說明，目前版本已經可以使用以下方法：<br/>
 1. [Quantization-aware training](https://github.com/tensorflow/tensorflow/tree/r1.15/tensorflow/contrib/quantize)(Qat)，此為本專案主要使用方法。
 2. [Full integer post-training quantization(post-training quantization)](https://www.tensorflow.org/lite/performance/post_training_quantization#full_integer_quantization_of_weights_and_activations)。 <br/>
 
