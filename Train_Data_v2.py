@@ -26,11 +26,8 @@ SOFTWARE.
 
 import tensorflow as tf
 from tensorflow.python.client import device_lib
-from tensorflow.keras import Sequential, Model, Input
-from tensorflow.keras.optimizers import Adadelta
-from tensorflow.keras.losses import categorical_crossentropy
+from tensorflow.keras import Input
 from tensorflow.keras.backend import l2_normalize
-from tensorflow.keras.layers import Lambda, Dense, Flatten, Conv2D, Activation, MaxPooling2D, BatchNormalization
 from tensorflow.keras.utils import plot_model
 from ASR_Model import ASR_Model
 from Config import Config
@@ -47,30 +44,6 @@ epochs = 2
 quant_delay = 10
 verbose = 1
 
-CNN_optimizer = Adadelta(lr=0.5)
-CNN_loss = categorical_crossentropy
-
-CNN_inputlayer_conv2D_hidden_unit = 32
-CNN_inputlayer_conv2D_kernel_size = (2, 2)
-CNN_inputlayer_Activation = 'relu'
-CNN_inputlayer_conv2D_padding = 'same'
-
-CNN_onelayer_conv2D_hidden_unit = 32
-CNN_onelayer_conv2D_kernel_size = (2, 2)
-CNN_onelayer_conv2D_padding = 'same'
-CNN_onelayer_Activation = 'relu'
-CNN_onelayer_MaxPooling2D_pool_size = (2, 2)
-
-CNN_twolayer_conv2D_hidden_unit = 64
-CNN_twolayer_conv2D_kernel_size = (2, 2)
-CNN_twolayer_conv2D_padding = 'same'
-CNN_twolayer_Activation = 'relu'
-CNN_twolayer_MaxPooling2D_pool_size = (2, 2)
-
-CNN_full_connectionlayer_Dense = 128
-CNN_full_connectionlayer_Activation = 'relu'
-CNN_ouputlayer_Activation = 'softmax'
-
 ''' 設置模型訓練時之回調函數控制 '''
 callbacks = [
     tf.keras.callbacks.TensorBoard(
@@ -86,76 +59,6 @@ callbacks = [
 
 input_arrays = list()
 output_arrays = list()
-
-
-def build_model():
-    '''
-    建置產生CNN模型實體。
-    '''
-
-    # 輸入層維度from keras.models import load_model
-    input_shape = (
-        np.array(Config.Train_DataSet).shape[1],
-        np.array(Config.Train_DataSet).shape[2],
-        Config.channel
-    )
-
-    # print("[Train_Data_v2] input_shape： {}".format(
-    #     input_shape
-    # ))
-
-    # l2_normalize = tf.keras.backend.l2_normalize(
-    #     Config.Train_DataSet, axis=0)
-    # print("[Train_Data_v2] l2_normalize : {}".format(l2_normalize))
-
-    Input_layer = Input(shape=input_shape)
-    # Input_layer = Input(shape=input_shape,
-    #                     tensor=l2_normalize, dtype='float32')
-    # l2_norm_layer = Lambda(lambda x: tf.math.l2_normalize(
-    #     x, axis=0, name="l2norm"))(Input_layer)
-
-    l2_norm_layer = Lambda(lambda x: l2_normalize(x, axis=0))(Input_layer)
-
-    Conv2D_1_layer = Conv2D(
-        CNN_inputlayer_conv2D_hidden_unit,
-        kernel_size=CNN_inputlayer_conv2D_kernel_size,
-        padding=CNN_inputlayer_conv2D_padding,
-    )(l2_norm_layer)
-
-    activation_1_layer = Activation(CNN_inputlayer_Activation)(Conv2D_1_layer)
-
-    batch_norm_1_layer = BatchNormalization(fused=False)(activation_1_layer)
-
-    MaxPooling2D_1_layer = MaxPooling2D(
-        pool_size=CNN_onelayer_MaxPooling2D_pool_size)(batch_norm_1_layer)
-
-    Conv2D_2_layer = Conv2D(
-        CNN_onelayer_conv2D_hidden_unit,
-        kernel_size=CNN_onelayer_conv2D_kernel_size,
-        padding=CNN_onelayer_conv2D_padding,
-    )(MaxPooling2D_1_layer)
-
-    activation_2_layer = Activation(CNN_inputlayer_Activation)(Conv2D_2_layer)
-
-    batch_norm_2_layer = BatchNormalization(fused=False)(activation_2_layer)
-
-    MaxPooling2D_layer = MaxPooling2D(
-        pool_size=CNN_onelayer_MaxPooling2D_pool_size)(batch_norm_2_layer)
-
-    flatten_layer = Flatten()(MaxPooling2D_layer)
-
-    dense_layer = Dense(CNN_full_connectionlayer_Dense)(flatten_layer)
-
-    activation_3_layer = Activation(
-        CNN_full_connectionlayer_Activation)(dense_layer)
-
-    output_layer = Dense(Config.class_num,  activation=CNN_ouputlayer_Activation)(
-        activation_3_layer)
-
-    model = Model(inputs=Input_layer, outputs=output_layer)
-
-    return model
-
 
 if __name__ == "__main__":
 
