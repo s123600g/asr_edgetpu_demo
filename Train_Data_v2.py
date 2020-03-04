@@ -37,7 +37,6 @@ import time
 import numpy as np
 import history_plot
 
-
 '''模型訓練參數配置-CNN'''
 batch_size = 1000
 epochs = 2
@@ -143,8 +142,8 @@ if __name__ == "__main__":
 
         ''' 編譯模型架構 '''
         net_model.compile(
-            loss=CNN_loss,  # 損失函數
-            optimizer=CNN_optimizer,  # 優化函數(針對梯度下降)
+            loss=tf.keras.losses.categorical_crossentropy,  # 損失函數
+            optimizer=tf.keras.optimizers.Adadelta(lr=0.5),  # 優化函數(針對梯度下降)
             metrics=['accuracy']
         )
 
