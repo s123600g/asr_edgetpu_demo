@@ -41,7 +41,7 @@ import history_plot
 batch_size = 1000
 epochs = 2
 quant_delay = 10
-verbose = 1
+verbose = 2
 
 ''' 設置模型訓練時之回調函數控制 '''
 callbacks = [
@@ -52,7 +52,7 @@ callbacks = [
     ),
     tf.keras.callbacks.ModelCheckpoint(filepath=os.path.join(Config.Model_ModelCheckpoint_Path, "ckpt_{epoch:02d}"),
                                        verbose=1,
-                                       save_weights_only=False
+                                       save_weights_only=True
                                        ),
 ]
 
@@ -62,13 +62,10 @@ output_arrays = list()
 if __name__ == "__main__":
 
     Start_Time = time.time()
-
-    # print(device_lib.list_local_devices(), end="\n\n")
-
+    print("[Train_Data_v2] device_lib：{}".format(
+        device_lib.list_local_devices()))
     print("[Train_Data_v2] Tensorflow Version：{}".format(
         tf.version.VERSION))  # for tf_nightly
-
-    # print("[Train_Data_v2] Tensorflow Version：{}".format(tf.VERSION))
 
     print("[Train_Data_v2] Tensorflow-Keras Version：{}".format(tf.keras.__version__))
     print("[Train_Data_v2] CheckPoints Path：{}".format(
@@ -110,14 +107,18 @@ if __name__ == "__main__":
         '''
         tf.keras.backend.set_learning_phase(1)
 
-        l2_normalize = tf.keras.backend.l2_normalize(
-            Config.Train_DataSet, axis=0)
+        # l2_normalize = tf.keras.backend.l2_normalize(
+        #     Config.Train_DataSet, axis=0)
+        # print(f"[Train_Data_v2] l2_normalize : {l2_normalize}")
 
-        print(f"[Train_Data_v2] l2_normalize : {l2_normalize}")
+        get_DataSet_dtype = Config.Train_DataSet.dtype
+        gen_input_tensor = tf.convert_to_tensor(
+            Config.Train_DataSet, dtype=get_DataSet_dtype)
+        print(f"[Train_Data_v2] gen_input_tensor : {gen_input_tensor}")
 
         ''' 建置模型架構實體 '''
         net_model = ASR_Model(Config.class_num).call(
-            inputs=tf.keras.Input(shape=input_shape, tensor=l2_normalize, dtype='float32'))
+            inputs=tf.keras.Input(shape=input_shape, tensor=gen_input_tensor, dtype=get_DataSet_dtype))
         # net_model = build_model()
 
         ''' 輸出顯示模型架構總體資訊 '''
@@ -187,12 +188,13 @@ if __name__ == "__main__":
         #     "Training"
         # )
 
-        l2_normalize_testdata = tf.keras.backend.l2_normalize(
-            Config.Test_DataSet, axis=0)
+        gen_test_tensor = tf.convert_to_tensor(
+            Config.Test_DataSet, dtype=get_DataSet_dtype)
+        print(f"[Train_Data_v2] gen_test_tensor : {gen_test_tensor}")
 
         ''' 驗證訓練後模型 '''
         score = net_model.evaluate(
-            x=l2_normalize_testdata,
+            x=gen_test_tensor,
             y=Config.Train_Labels,
             steps=steps_per_epoch,
             verbose=0
@@ -204,8 +206,8 @@ if __name__ == "__main__":
         print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 
         ''' 儲存訓練後模型和權重 '''
-        net_model.save_weights(Config.Model_Weight_Path)
-        net_model.save(Config.Model_Path)
+        # net_model.save_weights(Config.Model_Weight_Path)
+        # net_model.save(Config.Model_Path)
 
     ''' Eval model '''
     eval_graph = tf.Graph()
@@ -223,7 +225,6 @@ if __name__ == "__main__":
         ''' 建置模型架構實體 '''
         eval_model = ASR_Model(Config.class_num).call(
             inputs=tf.keras.Input(shape=input_shape))
-        # eval_model = build_model()
 
         ''' 
         建立量化之驗證圖層，將輸入圖層重新建置模擬量化
@@ -236,9 +237,12 @@ if __name__ == "__main__":
         ''' 取得模型內部結構，包含節點、內部函數數值等等 '''
         eval_graph_def = eval_graph.as_graph_def()
 
-        # print("eval_graph_def：\n{}\n".format(
+        # print("[Train_Data_v2]eval_graph_def：{}\n".format(
         #     eval_graph_def
         # ))
+
+        print("[Train_Data_v2] trainable_variables：{}".format(
+            tf.trainable_variables()))
 
         ''' 重新載入儲存權重變數，透過儲存紀錄點(存放權重參數) '''
         saver = tf.compat.v1.train.Saver()  # for tf_nightly
@@ -252,12 +256,13 @@ if __name__ == "__main__":
         frozen_graph_def = tf.compat.v1.graph_util.convert_variables_to_constants(
             eval_sess,
             eval_graph_def,
-            [eval_model.output.op.name]
+            [eval_model.output.op.name],
+
         )
 
-        # print("[Train_Data_v2]\n{}\n".format(
-        #     [eval_model.output.op.name]
-        # ))
+        print("[Train_Data_v2] output.op.name：{}\n".format(
+            [eval_model.output.op.name]
+        ))
 
         # input_arrays.append(eval_model.input.op.name)
         # print("\n[Train_Data_v2] Model_Input_Layer_Name：{}".format(
