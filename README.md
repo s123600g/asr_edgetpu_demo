@@ -29,7 +29,7 @@ pip install tensorflow==1.15.2
 1. [Quantization-aware training](https://github.com/tensorflow/tensorflow/tree/r1.15/tensorflow/contrib/quantize)(Qat)，此為本專案主要使用方法。
 2. [Full integer post-training quantization(post-training quantization)](https://www.tensorflow.org/lite/performance/post_training_quantization#full_integer_quantization_of_weights_and_activations)。 <br/>
 
-需要注意使用Tenserflow版本問題，目前TF2.0還尚未完整支援這兩種量化方法，建議運行使用 Tensorflow 1.15，本專案使用版本為tf_nightly 1.15.0.dev20190627，如果使用比這更新開發版本號時，須注意在 Train_Data.py 內所調用 Tensorflow API Function 支援問題，在目前版本號有些 API Function在更高開發版本號會被做更改或移除，有時你可能會遇到裝了1.15版本的TF，但是卻在執行模型建置階段時發生以下錯誤
+需要注意使用Tenserflow版本問題，目前TF2.0還尚未完整支援這兩種量化方法，建議運行使用 Tensorflow 1.15，如果使用比這更新開發版本號時，須注意在 Train_Data.py 內所調用 Tensorflow API Function 支援問題，在目前版本號有些 API Function在更高開發版本號會被做更改或移除，有時你可能會遇到裝了1.15版本的TF，但是卻在執行模型建置階段時發生以下錯誤
 ```
 ImportError: cannot import name 'dense_features'
 ```
