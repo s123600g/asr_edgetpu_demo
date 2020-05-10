@@ -41,7 +41,7 @@ import history_plot
 batch_size = 1000
 epochs = 2
 quant_delay = 10
-verbose = 2
+verbose = 1
 
 ''' 設置模型訓練時之回調函數控制 '''
 callbacks = [
@@ -85,8 +85,6 @@ if __name__ == "__main__":
 
     ''' 分配每一回合訓練資料量 '''
     steps_per_epoch = int((len(Config.Train_Labels) / batch_size))
-    # steps_per_epoch = len(Config.Train_Labels)
-
     print("[Train_Data_v2]steps_per_epoch：{}".format(
         int((len(Config.Train_Labels) / batch_size))
     ))
@@ -107,10 +105,6 @@ if __name__ == "__main__":
         '''
         tf.keras.backend.set_learning_phase(1)
 
-        # l2_normalize = tf.keras.backend.l2_normalize(
-        #     Config.Train_DataSet, axis=0)
-        # print(f"[Train_Data_v2] l2_normalize : {l2_normalize}")
-
         get_DataSet_dtype = Config.Train_DataSet.dtype
         gen_input_tensor = tf.convert_to_tensor(
             Config.Train_DataSet, dtype=get_DataSet_dtype)
@@ -119,7 +113,6 @@ if __name__ == "__main__":
         ''' 建置模型架構實體 '''
         net_model = ASR_Model(Config.class_num).call(
             inputs=tf.keras.Input(shape=input_shape, tensor=gen_input_tensor, dtype=get_DataSet_dtype))
-        # net_model = build_model()
 
         ''' 輸出顯示模型架構總體資訊 '''
         net_model.summary()
@@ -150,8 +143,6 @@ if __name__ == "__main__":
 
         ''' 訓練模型 '''
         history = net_model.fit(
-            # # 訓練資料集
-            # x = Config.Train_DataSet,
             # # 訓練資料集標籤
             y=Config.Train_Labels,
             # 設置每一回合訓練資料量
@@ -161,8 +152,6 @@ if __name__ == "__main__":
             epochs=epochs,
             # 是否觀察訓練過程
             verbose=verbose,
-            # # # 設置驗證資料集
-            # validation_data=(Config.Valid_DataSet, Config.Valid_Labels),
             # 回調函數
             callbacks=callbacks
         )
@@ -181,13 +170,7 @@ if __name__ == "__main__":
         saver = tf.compat.v1.train.Saver()  # for tf_nightly
         saver.save(train_sess, Config.Model_checkpoints_Path)
 
-        # ''' 建立訓練過程之準確度與損失函數變化圖片 '''
-        # history_plot.plot_figure(
-        #     history,
-        #     os.path.join(os.getcwd(), Config.Plot_Figure_DirectoryName),
-        #     "Training"
-        # )
-
+        # 建立資料Tensor
         gen_test_tensor = tf.convert_to_tensor(
             Config.Test_DataSet, dtype=get_DataSet_dtype)
         print(f"[Train_Data_v2] gen_test_tensor : {gen_test_tensor}")
@@ -204,10 +187,6 @@ if __name__ == "__main__":
         print("Evalluate Loss：[{:.2f}] | Accuracy：[{:.2f}] ".format(
             score[0], score[1]))
         print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-
-        ''' 儲存訓練後模型和權重 '''
-        # net_model.save_weights(Config.Model_Weight_Path)
-        # net_model.save(Config.Model_Path)
 
     ''' Eval model '''
     eval_graph = tf.Graph()
