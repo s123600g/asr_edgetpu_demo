@@ -18,7 +18,7 @@
 關於Tensorflow
 --
 由於Tensorflow2新版本發佈，對於tf-nightly版本也受影響，原本使用tf-nightly1.15已無法再透過pip安裝取得。<br/>
-現在可以使用1.15版本Tensorflow來取代原本舊tf-nightly1.15，參考 [tensorflow 1.15.2](https://pypi.org/project/tensorflow/1.15.2/)
+現在可以使用1.15版本Tensorflow來取代原本tf-nightly1.15，參考 [tensorflow 1.15.2](https://pypi.org/project/tensorflow/1.15.2/)
 ```
 pip install tensorflow==1.15.2
 ```
