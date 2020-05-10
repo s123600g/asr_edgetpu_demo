@@ -23,6 +23,29 @@
 pip install tensorflow==1.15.2
 ```
 
+關於模型量化
+--
+根據Google Coral 官方在 [Quantization](https://coral.ai/docs/edgetpu/models-intro/#quantization) 區塊內說明，目前版本已經可以使用以下方法：<br/>
+1. [Quantization-aware training](https://github.com/tensorflow/tensorflow/tree/r1.15/tensorflow/contrib/quantize)(Qat)，此為本專案主要使用方法。
+2. [Full integer post-training quantization(post-training quantization)](https://www.tensorflow.org/lite/performance/post_training_quantization#full_integer_quantization_of_weights_and_activations)。 <br/>
+
+需要注意使用Tenserflow版本問題，目前TF2.0還尚未完整支援這兩種量化方法，建議運行使用 Tensorflow 1.15，本專案使用版本為tf_nightly 1.15.0.dev20190627，如果使用比這更新開發版本號時，須注意在 Train_Data.py 內所調用 Tensorflow API Function 支援問題，在目前版本號有些 API Function在更高開發版本號會被做更改或移除，有時你可能會遇到裝了1.15版本的TF，但是卻在執行模型建置階段時發生以下錯誤
+```
+ImportError: cannot import name 'dense_features'
+```
+
+請確認 pip list 內 tf-estimator-nightly 版本號是否安裝到2.x版，如果是請移除掉並重新安裝 1.14.0.dev2019062701 版本號。 <br/>
+
+> pip install tf-estimator-nightly==1.14.0.dev2019062701
+
+<br/>
+
+你必須了解Qat量化在實作架購上，所調用 tf.contrib.quantize api function 內容分別為：
+1. [create_training_graph](https://www.tensorflow.org/versions/r1.15/api_docs/python/tf/contrib/quantize/create_training_graph?hl=zh_tw)
+2. [create_eval_graph](https://www.tensorflow.org/versions/r1.15/api_docs/python/tf/contrib/quantize/create_eval_graph?hl=zh_tw)
+
+在create_training_graph與create_eval_graph兩者在專案上，實際如何實作請參閱 [使用EdgeTpu應用在語音模型預測之簡單實例(三)-建立模型與訓練](https://medium.com/@s123600g/%E4%BD%BF%E7%94%A8edgetpu%E6%87%89%E7%94%A8%E5%9C%A8%E8%AA%9E%E9%9F%B3%E6%A8%A1%E5%9E%8B%E9%A0%90%E6%B8%AC%E4%B9%8B%E7%B0%A1%E5%96%AE%E5%AF%A6%E4%BE%8B-%E4%B8%89-%E5%BB%BA%E7%AB%8B%E6%A8%A1%E5%9E%8B%E8%88%87%E8%A8%93%E7%B7%B4-3ae20b170eb) 內容。
+
 關於資料集
 --
 使用在Tensorflow官方[Simple Audio Recognition](https://www.tensorflow.org/tutorials/sequences/audio_recognition) 例子內所使用之語音資料集[speech_commands_v0.02.tar.gz](https://storage.cloud.google.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz)<br/>
@@ -83,29 +106,6 @@ For  Windows: <br/>
 
 For Ubuntu: <br/>
 > deactivate <br/>
-
-關於模型量化
---
-根據Google Coral 官方在 [Quantization](https://coral.ai/docs/edgetpu/models-intro/#quantization) 區塊內說明，目前版本已經可以使用以下方法：<br/>
-1. [Quantization-aware training](https://github.com/tensorflow/tensorflow/tree/r1.15/tensorflow/contrib/quantize)(Qat)，此為本專案主要使用方法。
-2. [Full integer post-training quantization(post-training quantization)](https://www.tensorflow.org/lite/performance/post_training_quantization#full_integer_quantization_of_weights_and_activations)。 <br/>
-
-需要注意使用Tenserflow版本問題，目前TF2.0還尚未完整支援這兩種量化方法，建議運行使用 Tensorflow 1.15，本專案使用版本為tf_nightly 1.15.0.dev20190627，如果使用比這更新開發版本號時，須注意在 Train_Data.py 內所調用 Tensorflow API Function 支援問題，在目前版本號有些 API Function在更高開發版本號會被做更改或移除，有時你可能會遇到裝了1.15版本的TF，但是卻在執行模型建置階段時發生以下錯誤
-```
-ImportError: cannot import name 'dense_features'
-```
-
-請確認 pip list 內 tf-estimator-nightly 版本號是否安裝到2.x版，如果是請移除掉並重新安裝 1.14.0.dev2019062701 版本號。 <br/>
-
-> pip install tf-estimator-nightly==1.14.0.dev2019062701
-
-<br/>
-
-你必須了解Qat量化在實作架購上，所調用 tf.contrib.quantize api function 內容分別為：
-1. [create_training_graph](https://www.tensorflow.org/versions/r1.15/api_docs/python/tf/contrib/quantize/create_training_graph?hl=zh_tw)
-2. [create_eval_graph](https://www.tensorflow.org/versions/r1.15/api_docs/python/tf/contrib/quantize/create_eval_graph?hl=zh_tw)
-
-在create_training_graph與create_eval_graph兩者在專案上，實際如何實作請參閱 [使用EdgeTpu應用在語音模型預測之簡單實例(三)-建立模型與訓練](https://medium.com/@s123600g/%E4%BD%BF%E7%94%A8edgetpu%E6%87%89%E7%94%A8%E5%9C%A8%E8%AA%9E%E9%9F%B3%E6%A8%A1%E5%9E%8B%E9%A0%90%E6%B8%AC%E4%B9%8B%E7%B0%A1%E5%96%AE%E5%AF%A6%E4%BE%8B-%E4%B8%89-%E5%BB%BA%E7%AB%8B%E6%A8%A1%E5%9E%8B%E8%88%87%E8%A8%93%E7%B7%B4-3ae20b170eb) 內容。
 
 關於專案操作
 --
