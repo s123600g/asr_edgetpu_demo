@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT) ![](https://img.shields.io/github/languages/code-size/s123600g/asr_edgetpu_demo)
+[![](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT) ![](https://img.shields.io/github/languages/code-size/s123600g/asr_edgetpu_demo) ![](https://img.shields.io/badge/Tensorflow-1.15.2-orange?style=flat) ![GitHub last commit](https://img.shields.io/github/last-commit/s123600g/asr_edgetpu_demo) ![GitHub stars](https://img.shields.io/github/stars/s123600g/asr_edgetpu_demo?style=social)
 
 
 參考資訊
