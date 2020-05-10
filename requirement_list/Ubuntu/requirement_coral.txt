@@ -9,5 +9,4 @@ sklearn==0.0
 librosa==0.6.3
 pydot==1.4.1
 graphviz==0.13.2
-tf-estimator-nightly==1.14.0.dev2019062701
-tf-nightly==1.15.0.dev20190627
+tensorflow==1.15.2
