@@ -1,4 +1,7 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT) 
+
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/s123600g/asr_edgetpu_demo)
+
 
 參考資訊
 --
