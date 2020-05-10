@@ -15,6 +15,14 @@
 [7] [EdgeTpu操作環境安裝配置筆記-使用Google Coral USB Accelerator for Ubuntu](https://medium.com/@s123600g/%E4%BD%BF%E7%94%A8edgetpu%E6%87%89%E7%94%A8%E5%9C%A8%E8%AA%9E%E9%9F%B3%E6%A8%A1%E5%9E%8B%E9%A0%90%E6%B8%AC%E4%B9%8B%E7%B0%A1%E5%96%AE%E5%AF%A6%E4%BE%8B-%E4%B8%80-%E5%89%8D%E8%A8%80%E8%88%87%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83%E9%85%8D%E7%BD%AE-d8720eb0d970)<br/>
 [8] [EdgeTpu操作環境安裝配置筆記(二)-使用Google Coral USB Accelerator for Windows 10](https://medium.com/@s123600g/edgetpu%E6%93%8D%E4%BD%9C%E7%92%B0%E5%A2%83%E5%AE%89%E8%A3%9D%E9%85%8D%E7%BD%AE%E7%AD%86%E8%A8%98-%E4%BA%8C-9282f2f62812)<br/>
 
+關於Tensorflow
+--
+由於Tensorflow2新版本發佈，對於tf-nightly版本也受影響，原本使用tf-nightly1.15已無法再透過pip安裝取得。<br/>
+現在可以使用1.15版本Tensorflow來取代原本舊tf-nightly1.15，參考 [tensorflow 1.15.2](https://pypi.org/project/tensorflow/1.15.2/)
+```
+pip install tensorflow==1.15.2
+```
+
 關於資料集
 --
 使用在Tensorflow官方[Simple Audio Recognition](https://www.tensorflow.org/tutorials/sequences/audio_recognition) 例子內所使用之語音資料集[speech_commands_v0.02.tar.gz](https://storage.cloud.google.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz)<br/>
